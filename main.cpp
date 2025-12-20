@@ -1,7 +1,7 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-#include <deque>
+#include <deque> // для точек
 
 
 struct Dot {
@@ -37,7 +37,7 @@ void DrawApp::update() {
 }
 
 void DrawApp::draw() {
-    ci::gl::clear( ci::Color( 0.1f, 0.1f, 0.1f ) ); 
+    ci::gl::clear( ci::Color( 0.1f, 0.1f, 0.1f ) ); // темный экран
     
     if( mPoints.size() < 2 ) return;
 
@@ -45,12 +45,12 @@ void DrawApp::draw() {
     ci::gl::enableAlphaBlending();
 
     // Рисуем линии
-    ci::gl::begin( GL_LINE_STRIP );
+    ci::gl::begin( GL_LINE_STRIP ); // точки карте, соедени их
     for( const auto& dot : mPoints ) {
         float age = (float)(getElapsedSeconds() - dot.birthTime);
         float alpha = 1.0f - (age / (float)mLifetime);
         
-        ci::gl::color( ci::ColorA( 0.0f, 0.8f, 1.0f, alpha ) ); 
+        ci::gl::color( ci::ColorA( 0.0f, 0.8f, 1.0f, alpha ) ); // точки видеокарте
         ci::gl::vertex( dot.pos );
     }
     ci::gl::end();
