@@ -37,7 +37,7 @@ void DrawApp::update() {
 }
 
 void DrawApp::draw() {
-    ci::gl::clear( ci::Color( 0.1f, 0.1f, 0.1f ) ); // темный экран
+    ci::gl::clear( ci::Color( 0.1f, 0.1f, 0.1f ) );
     
     if( mPoints.size() < 2 ) return;
 
