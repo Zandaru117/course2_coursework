@@ -17,7 +17,7 @@ class DrawApp : public ci::app::App {
     void draw() override;
 
     std::deque<Dot> mPoints;
-    double mLifetime = 5.0; // Время жизни линии в секундах
+    double mLifetime = 3.0; // Время жизни линии в секундах
 };
 
 void DrawApp::mouseDown( ci::app::MouseEvent event ) {

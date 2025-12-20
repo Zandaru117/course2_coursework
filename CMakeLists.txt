@@ -3,12 +3,12 @@ project(coursework)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Пути к вашей сборке Cinder
+
 set(CINDER_PATH "C:/msys64/home/Пользователь/Cinder")
 
 add_executable(coursework main.cpp)
 
-# Подключаем заголовки
+
 target_include_directories(coursework PRIVATE "${CINDER_PATH}/include")
 
 target_link_libraries(coursework PRIVATE 
@@ -24,8 +24,8 @@ target_link_libraries(coursework PRIVATE
     oleaut32
     uuid
     ws2_32
-    wininet    # Для UrlImplWinInet (InternetOpenW, и т.д.)
-    iphlpapi   # Для System (GetAdaptersInfo)
-    shlwapi    # Для PlatformMsw (PathCanonicalizeW)
-    version    # Для StackWalker (GetFileVersionInfoA)
+    wininet    
+    iphlpapi   
+    shlwapi    
+    version    
 )
